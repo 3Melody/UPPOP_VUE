@@ -46,6 +46,8 @@ public class Activity {
     @Column(name = "ID_img")
     private Long id_img;
 
+    @ElementCollection
+    @CollectionTable(name = "activity_detail", joinColumns = @JoinColumn(name = "activity_id"))
     @Column(name = "detail")
     private List<String> detail;
 

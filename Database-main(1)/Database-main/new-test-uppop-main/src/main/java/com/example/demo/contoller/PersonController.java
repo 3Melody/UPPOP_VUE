@@ -72,10 +72,10 @@ public class PersonController {
         String password = credentials.get("password");
 
         try {
-            Optional<Object> personOptional = Optional.ofNullable(personRepository.findByUsernameAndPassword(username, password));
+            Optional<Person> personOptional = Optional.ofNullable(personRepository.findByUsernameAndPassword(username, password));
 
             if (personOptional.isPresent()) {
-                Long userId = ((Person) personOptional.get()).getIdUser();
+                Long userId = personOptional.get().getIdUser();
 
                 // Return user ID along with success message
                 return new ResponseEntity<>("Login successful. User ID: " + userId, HttpStatus.OK);

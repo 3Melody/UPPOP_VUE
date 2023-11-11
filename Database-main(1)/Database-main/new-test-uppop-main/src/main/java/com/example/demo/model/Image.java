@@ -11,8 +11,8 @@ public class Image {
     @Column(name = "ID_img")
     private Long id;
 
-     @Column(name = "URL")
-    private String URL; 
+     @Column(name = "url")
+    private String url; 
 
 
 }
